@@ -1,0 +1,3 @@
+[workspace]
+
+members = ["myshafa_app", "myshafa_core"]

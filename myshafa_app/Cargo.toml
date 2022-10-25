@@ -1,0 +1,20 @@
+[package]
+name = "myshafa_app"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "myshafa_app"
+path = "src/bin/main.rs"
+
+[lib]
+name = "myshafa_app_lib"
+path = "src/lib/lib.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+warp = "0.3"
+clap = "4.0.15"
+myshafa_core = { path = "../myshafa_core" }

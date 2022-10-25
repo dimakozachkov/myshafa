@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+    postgres:
+        image: postgres:13.3
+        environment:
+            POSTGRES_DB: "myshafa"
+            POSTGRES_USER: "myshafa"
+            POSTGRES_PASSWORD: "pgpwd4mshf"
+        ports:
+            - "5432:5432"
+        volumes:
+            - ./.docker/initdb:/docker-entrypoint-initdb.d
+            - ./.docker/db:/var/lib/postgresql/data
+        networks:
+            - postgres
+        restart: unless-stopped
+
+networks:
+    postgres:
+        driver: bridge
